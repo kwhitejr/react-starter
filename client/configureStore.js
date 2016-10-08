@@ -1,8 +1,8 @@
 import {createStore} from 'redux';
-// import reducer from './reducers';
+import reducer from './reducers';
 
 export default (initialState) => createStore(
-  () => {}, // reducer
+  reducer, // () => {} 
   initialState,
   typeof window !== 'undefined' && window.devToolsExtension
     ? window.devToolsExtension()
