@@ -6,7 +6,7 @@ import {createLocation} from 'history/LocationUtils';
 import {renderToStaticMarkup, renderToString} from 'react-dom/server';
 
 import Html from '../../client/components/Html';
-import NotFound from '../../client/routes/NotFound';
+import NotFound from '../../client/containers/NotFound';
 import configureStore from '../../client/configureStore';
 import routes from '../../client/routes';
 
