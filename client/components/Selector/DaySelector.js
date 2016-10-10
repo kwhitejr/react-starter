@@ -42,7 +42,7 @@ DaySelector = reduxForm({
   validate
 })(DaySelector)
 
-const selector = formValueSelector('selector')
+const selector = formValueSelector('selector') // access current form values
 export default DaySelector = connect(
   state => {
     const { phase, week } = selector(state, 'phase', 'week')

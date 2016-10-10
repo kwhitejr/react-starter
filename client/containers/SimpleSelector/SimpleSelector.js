@@ -12,7 +12,3 @@ const SimpleSelector = () => (
 );
 
 export default SimpleSelector;
-
-// const PhaseSelector = () => (
-
-// );
