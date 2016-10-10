@@ -9,16 +9,23 @@ const renderError = ({ meta: { touched, error } }) => touched && error ?
 
 let DaySelector = (props) => {
 
-  const { handleSubmit, pristine, previousPage, submitting, phase } = props
+  const { handleSubmit, pristine, previousPage, submitting, phase, week } = props
   console.log(phase);
   return (
     <form onSubmit={handleSubmit}>
+      <h3>Phase {phase}</h3>
+      <h4>Week {week}</h4>
       <label>Choose Day</label>
       <div>
-        <label><Field name="day" component="input" type="radio" value="1"/> Day 1: Back & Rear Deltoids</label>
-        <label><Field name="day" component="input" type="radio" value="2"/> Day 2: Chest & Front Deltoids</label>
-        <label><Field name="day" component="input" type="radio" value="3"/> Day 3: Legs & Calves</label>
-        <label><Field name="day" component="input" type="radio" value="4"/> Day 4: Arms & Traps</label>
+        {(() => {
+          switch (phase) {
+            case '1': return <PhaseOne />;
+            case '2': return <PhaseTwo />;
+            case '3': return <PhaseThree />;
+            case '4': return <PhaseFour />;
+            default: return <h1>Phase Error</h1>;
+          }
+        })()}
         <Field name="day" component={renderError}/>
       </div>
       <div>
@@ -38,50 +45,50 @@ DaySelector = reduxForm({
 const selector = formValueSelector('selector')
 export default DaySelector = connect(
   state => {
-    const phase = selector(state, 'phase')
+    const { phase, week } = selector(state, 'phase', 'week')
     return {
-      phase
+      phase,
+      week
     }
   }
 )(DaySelector);
 
+const PhaseOne = () => {
+  return (<div>
+    <label><Field name="day" component="input" type="radio" value="1"/> Day 1: Back & Rear Deltoids</label>
+    <label><Field name="day" component="input" type="radio" value="2"/> Day 2: Chest & Front Deltoids</label>
+    <label><Field name="day" component="input" type="radio" value="3"/> Day 3: Legs & Calves</label>
+    <label><Field name="day" component="input" type="radio" value="4"/> Day 4: Arms & Traps</label>
+  </div>);
+}
 
+const PhaseTwo = () => {
+  return (<div>
+    <label><Field name="day" component="input" type="radio" value="1"/> Day 1: Legs & Calves</label>
+    <label><Field name="day" component="input" type="radio" value="2"/> Day 2: Back, Traps, & Biceps</label>
+    <label><Field name="day" component="input" type="radio" value="3"/> Day 3: Chest & Triceps</label>
+    <label><Field name="day" component="input" type="radio" value="4"/> Day 4: Deltoids & Forearms</label>
+    <label><Field name="day" component="input" type="radio" value="5"/> Day 5: Legs & Calves</label>
+  </div>);
+}
 
+const PhaseThree = () => {
+  return (<div>
+    <label><Field name="day" component="input" type="radio" value="1"/> Day 1: Back & Traps</label>
+    <label><Field name="day" component="input" type="radio" value="2"/> Day 2: Chest</label>
+    <label><Field name="day" component="input" type="radio" value="3"/> Day 3: Legs & Calves</label>
+    <label><Field name="day" component="input" type="radio" value="4"/> Day 4: Deltoids</label>
+    <label><Field name="day" component="input" type="radio" value="5"/> Day 5: Arms (Biceps, Triceps, Forearms)</label>
+  </div>);
+}
 
-
-
-
-
-// const PhaseOne = () => {
-//   <div>
-//     <label><Field name="day" component="input" type="radio" value="1"/> Day 1: Back & Rear Deltoids</label>
-//     <label><Field name="day" component="input" type="radio" value="2"/> Day 2: Chest & Front Deltoids</label>
-//     <label><Field name="day" component="input" type="radio" value="3"/> Day 3: Legs & Calves</label>
-//     <label><Field name="day" component="input" type="radio" value="4"/> Day 4: Arms & Traps</label>
-//   </div>
-// }
-
-// const PhaseTwo = () => {
-//   <label><Field name="day" component="input" type="radio" value="1"/> Day 1: Legs & Calves</label>
-//   <label><Field name="day" component="input" type="radio" value="2"/> Day 2: Back, Traps, & Biceps</label>
-//   <label><Field name="day" component="input" type="radio" value="3"/> Day 3: Chest & Triceps</label>
-//   <label><Field name="day" component="input" type="radio" value="4"/> Day 4: Deltoids & Forearms</label>
-//   <label><Field name="day" component="input" type="radio" value="5"/> Day 5: Legs & Calves</label>
-// }
-
-// const PhaseThree = () => {
-//   <label><Field name="day" component="input" type="radio" value="1"/> Day 1: Back & Traps</label>
-//   <label><Field name="day" component="input" type="radio" value="2"/> Day 2: Chest</label>
-//   <label><Field name="day" component="input" type="radio" value="3"/> Day 3: Legs & Calves</label>
-//   <label><Field name="day" component="input" type="radio" value="4"/> Day 4: Deltoids</label>
-//   <label><Field name="day" component="input" type="radio" value="5"/> Day 5: Arms (Biceps, Triceps, Forearms)</label>
-// }
-
-// const PhaseFour = () => {
-//   <label><Field name="day" component="input" type="radio" value="1"/> Day 1: Back & Chest</label>
-//   <label><Field name="day" component="input" type="radio" value="2"/> Day 2: Legs</label>
-//   <label><Field name="day" component="input" type="radio" value="3"/> Day 3: Shoulders & Traps</label>
-//   <label><Field name="day" component="input" type="radio" value="4"/> Day 4: Triceps & Biceps</label>
-//   <label><Field name="day" component="input" type="radio" value="5"/> Day 5: Legs</label>
-//   <label><Field name="day" component="input" type="radio" value="6"/> Day 6: Chest & Back</label>
-// }
+const PhaseFour = () => {
+  return (<div>
+    <label><Field name="day" component="input" type="radio" value="1"/> Day 1: Back & Chest</label>
+    <label><Field name="day" component="input" type="radio" value="2"/> Day 2: Legs</label>
+    <label><Field name="day" component="input" type="radio" value="3"/> Day 3: Shoulders & Traps</label>
+    <label><Field name="day" component="input" type="radio" value="4"/> Day 4: Triceps & Biceps</label>
+    <label><Field name="day" component="input" type="radio" value="5"/> Day 5: Legs</label>
+    <label><Field name="day" component="input" type="radio" value="6"/> Day 6: Chest & Back</label>
+  </div>);
+}
