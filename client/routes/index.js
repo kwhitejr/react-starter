@@ -10,6 +10,7 @@ import React from 'react';
 import App from '../containers/App';
 import Home from '../containers/Home';
 import About from '../containers/About';
+import SimpleSelector from '../containers/SimpleSelector';
 import NotFound from '../containers/NotFound';
 
 export default (
@@ -17,6 +18,7 @@ export default (
     <Route component={App} path='/'>
       <IndexRoute component={Home} />
       <Route component={About} path='about'/>
+      <Route component={SimpleSelector} path='select'/>
       <Route component={NotFound} path='*' />
     </Route>
   </Router>
