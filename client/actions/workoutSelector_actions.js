@@ -1,3 +1,5 @@
+import workouts from '../../config/workouts';
+
 function receiveWorkout(selectedWorkout) {
   return {
     type: 'RECEIVE_WORKOUT',
@@ -9,17 +11,15 @@ export function fetchWorkout() {
   return (dispatch, getState) => {
     const form = getState().form;
     const workout = {
-      phase:  form.selector.phase.value,
-      week:   form.selector.week.value,
-      day:    form.selector.day.value,
+      phase:  form.selector.values.phase,
+      week:   form.selector.values.week,
+      day:    form.selector.values.day,
     };
-    console.log(workout);
     const workoutId = workout.phase + workout.week + workout.day;
-    console.log(workoutId);
-    const workouts = fetch(`../../config/workouts`);
+    // const workouts = fetch(`../../config/workouts`);
     const selectedWorkout = workouts.filter(x => x.id === workoutId);
-    console.log(selectedWorkout);
+    console.log(selectedWorkout[0]);
 
-    dispatch(receiveWorkout(selectedWorkout));
+    dispatch(receiveWorkout(selectedWorkout[0]));
   }
 }

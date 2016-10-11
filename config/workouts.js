@@ -1,4 +1,4 @@
-export default {
+export default [
   {
     id:     '111',
     phase:  '1',
@@ -165,4 +165,4 @@ export default {
       },
     ]
   },
-}
+]

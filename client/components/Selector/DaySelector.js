@@ -9,10 +9,9 @@ const renderError = ({ meta: { touched, error } }) => touched && error ?
 
 let DaySelector = (props) => {
 
-  const { handleSubmit, pristine, previousPage, submitting, phase, week } = props
-  console.log(phase);
+  const { handleSubmit, pristine, previousPage, submitting, phase, week, fetchWorkout } = props
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit.bind(fetchWorkout)}>
       <h3>Phase {phase}</h3>
       <h4>Week {week}</h4>
       <label>Choose Day</label>

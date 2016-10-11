@@ -23,8 +23,8 @@ class SelectorForm extends Component {
 
   render() {
     const { fetchWorkout } = this.props
-    console.log(fetchWorkout);
-    console.log(fetchWorkout());
+    // console.log(fetchWorkout);
+    // console.log(fetchWorkout());
     const { page } = this.state
     return (<div>
         {page === 1 && <PhaseSelector onSubmit={this.nextPage}/>}
