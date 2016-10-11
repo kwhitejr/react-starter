@@ -1,6 +1,7 @@
 import workouts from '../../config/workouts';
 
 function receiveWorkout(selectedWorkout) {
+  console.log('received workout');
   return {
     type: 'RECEIVE_WORKOUT',
     selectedWorkout,
