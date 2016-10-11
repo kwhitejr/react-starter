@@ -1,3 +1,5 @@
+import { browserHistory } from 'react-router';
+
 import workouts from '../../config/workouts';
 
 function receiveWorkout(selectedWorkout) {
@@ -22,5 +24,7 @@ export function fetchWorkout() {
     console.log(selectedWorkout[0]);
 
     dispatch(receiveWorkout(selectedWorkout[0]));
+
+    browserHistory.push('/')
   }
 }
