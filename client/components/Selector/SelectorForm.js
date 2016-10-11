@@ -22,19 +22,21 @@ class SelectorForm extends Component {
   }
 
   render() {
-    const { onSubmit } = this.props
+    const { fetchWorkout } = this.props
+    console.log(fetchWorkout);
+    console.log(fetchWorkout());
     const { page } = this.state
     return (<div>
         {page === 1 && <PhaseSelector onSubmit={this.nextPage}/>}
         {page === 2 && <WeekSelector previousPage={this.previousPage} onSubmit={this.nextPage}/>}
-        {page === 3 && <DaySelector previousPage={this.previousPage} onSubmit={onSubmit}/>}
+        {page === 3 && <DaySelector previousPage={this.previousPage} onSubmit={fetchWorkout}/>}
       </div>
     )
   }
 }
 
 SelectorForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired
+  fetchWorkout: PropTypes.func.isRequired
 }
 
 export default SelectorForm

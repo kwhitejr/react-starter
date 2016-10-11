@@ -16,10 +16,10 @@ export function fetchWorkout() {
     console.log(workout);
     const workoutId = workout.phase + workout.week + workout.day;
     console.log(workoutId);
-    return fetch(`../../config/workouts`)
-      .then(response => response.json())
-      .then(json => json.filter( workout => return workout.id === workoutId
-      ))
-      .then(selectedWorkout => dispatch(receiveWorkout(selectedWorkout)));
+    const workouts = fetch(`../../config/workouts`);
+    const selectedWorkout = workouts.filter(x => x.id === workoutId);
+    console.log(selectedWorkout);
+
+    dispatch(receiveWorkout(selectedWorkout));
   }
 }

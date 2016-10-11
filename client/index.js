@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import {AppContainer} from 'react-hot-loader';
 
 import Root from './components/Root';
