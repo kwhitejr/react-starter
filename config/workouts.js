@@ -7,33 +7,27 @@ export default [
     title:  'Back & Rear Deltoids',
     exercises: [
       {
-        name: 'deadlift',
-        sets: '4',
+        name: 'deadlifts',
         reps: [10,8,6,4]   
       },
       {
         name: 'pullups',
-        sets: '4',
         reps: [10,10,10,10]   
       },
       {
-        name: 'single arm dumbell row',
-        sets: '4',
+        name: 'single arm dumbbell row',
         reps: [10,10,10,10]   
       },
       {
         name: 't-bar row',
-        sets: '4',
         reps: [10,10,10,10]   
       },
       {
         name: 'barbell facepulls',
-        sets: '4',
         reps: [12,12,12,12]   
       },
       {
         name: 'bent-over lateral raises',
-        sets: '3',
         reps: [15,15,15]   
       },
     ]
@@ -47,37 +41,30 @@ export default [
     exercises: [
       {
         name: 'incline dumbbell press',
-        sets: '4',
         reps: [12,10,8,8]   
       },
       {
         name: 'barbell flat press',
-        sets: '4',
         reps: [10,8,8,6]   
       },
       {
         name: 'landmine press',
-        sets: '4',
         reps: [10,10,10,10]   
       },
       {
         name: 'dumbbell flys',
-        sets: '3',
         reps: [15,15,15]   
       },
       {
         name: 'dumbbell upright rows',
-        sets: '4',
         reps: [10,10,10,10]   
       },
       {
         name: 'alternating dumbbell front raises',
-        sets: '3',
         reps: [12,12,12]   
       },
       {
         name: 'lateral raises',
-        sets: '3',
         reps: [12,12,12]   
       },
     ]
@@ -91,32 +78,26 @@ export default [
     exercises: [
       {
         name: 'squats',
-        sets: '4',
         reps: [12,10,8,6]   
       },
       {
         name: 'walking lunges',
-        sets: '3',
         reps: [10,10,10]   
       },
       {
         name: 'romanian deadlifts',
-        sets: '4',
         reps: [12,12,12,12]   
       },
       {
         name: 'glute bridges',
-        sets: '3',
         reps: [10,10,10]   
       },
       {
         name: 'kettle bell swings',
-        sets: '3',
         reps: [12,12,12]   
       },
       {
         name: 'seated calf raises',
-        sets: '5',
         reps: [10,10,10,10,10]   
       },
     ]
@@ -130,38 +111,181 @@ export default [
     exercises: [
       {
         name: 'close grip press',
-        sets: '4',
         reps: [10,10,10,10]   
       },
       {
         name: 'skull crushers',
-        sets: '3',
         reps: [12,12,12]   
       },
       {
         name: 'kick backs',
-        sets: '3',
         reps: [12,12,12]   
       },
       {
         name: 'underhand pull down',
-        sets: '4',
         reps: [10,10,10,10]   
       },
       {
         name: 'barbell curls',
-        sets: '3',
         reps: [12,12,12]   
       },
       {
         name: 'alernating hammer curls',
-        sets: '3',
         reps: [10,10,10]   
       },
       {
         name: 'barbell shrug',
-        sets: '5',
         reps: [10,10,10,10,10]   
+      },
+    ]
+  },
+  {
+    id:     [2,1], // [phase,day]
+    title:  'Legs & Calves',
+    exercises: [
+      {
+        name: 'squats',
+        reps: [12,10,8,6,4]   
+      },
+      {
+        name: 'step-ups',
+        reps: [10,10,10,10]   
+      },
+      {
+        name: 'trap bar deadlifts',
+        reps: [10,10,10,10]   
+      },
+      {
+        name: 'lateral box squats',
+        reps: [10,10,10]   
+      },
+      {
+        name: 'romanian deadlifts',
+        reps: [10,10,10]   
+      },
+      {
+        name: 'seated calf raises',
+        reps: [12,12,12,12]   
+      },
+    ]
+  },
+  {
+    id:     [2,2], // [phase,day]
+    title:  'Back, Traps, & Biceps',
+    exercises: [
+      {
+        name: 'deadlifts',
+        reps: [10,8,6,4]   
+      },
+      {
+        name: 'bent-over row',
+        reps: [8,8,8,8]   
+      },
+      {
+        name: 'v-grip pullups',
+        reps: [8,8,8,8]   
+      },
+      {
+        name: 'dumbbell pull-overs',
+        reps: [12,12,12]   
+      },
+      {
+        name: 'dumbbell shrugs',
+        reps: [12,12,12,12]   
+      },
+      {
+        name: 'drag curls',
+        reps: [12,12,12]   
+      },
+      {
+        name: 'incline bench dumbbell curls',
+        reps: [12,12,12]   
+      },
+    ]
+  },
+  {
+    id:     [2,3], // [phase,day]
+    title:  'Chest & Triceps',
+    exercises: [
+      {
+        name: 'dumbbell press',
+        reps: [12,10,8,8]   
+      },
+      {
+        name: 'incline barbell press',
+        reps: [10,10,10,10]   
+      },
+      {
+        name: 'single-arm dumbbell press',
+        reps: [10,10,10]   
+      },
+      {
+        name: 'incline dumbbell fly',
+        reps: [12,12,12]   
+      },
+      {
+        name: 'single-arm dumbbell french press',
+        reps: [12,12,12]   
+      },
+      {
+        name: 'cross bench dips',
+        reps: [10,10,10]   
+      },
+    ]
+  },
+  {
+    id:     [2,4], // [phase,day]
+    title:  'Deltoids & Forearms',
+    exercises: [
+      {
+        name: 'overhead press',
+        reps: [12,10,8,6]   
+      },
+      {
+        name: 'single-arm kettlebell press',
+        reps: [10,10,10]   
+      },
+      {
+        name: 'reverse upright row',
+        reps: [12,12,12,12]   
+      },
+      {
+        name: 'lateral raises',
+        reps: [12,12,12,12]   
+      },
+      {
+        name: 'reverse curls',
+        reps: [12,12,12]   
+      },
+      {
+        name: 'finger curls',
+        reps: [12,12,12]   
+      },
+    ]
+  },
+  {
+    id:     [2,5], // [phase,day]
+    title:  'Legs & Calves',
+    exercises: [
+      {
+        name: 'front squats',
+        reps: [12,10,8,6]   
+      },
+      {
+        name: 'glute bridges',
+        reps: [12,12,12,12]   
+      },
+      {
+        name: 'split squats',
+        reps: [8,8,8,8]   
+      },
+      {
+        name: 'single leg romanian deadlifts',
+        reps: [12,12,12,12]   
+      },
+      {
+        name: 'standing calf raises',
+        reps: [12,12,12,12]   
       },
     ]
   },
