@@ -15,7 +15,6 @@ class SimpleSelector extends React.Component {
   }
 }
 
-
 const mapDispatchToProps = (dispatch) => ({
   fetchWorkout: () => dispatch(fetchWorkout()),
 });

@@ -25,6 +25,6 @@ export function fetchWorkout() {
 
     dispatch(receiveWorkout(selectedWorkout[0]));
 
-    browserHistory.push('/')
+    browserHistory.push('/workout')
   }
 }
