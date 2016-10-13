@@ -14,15 +14,11 @@ const WorkoutHead = ({ selectedWorkout }) => {
 
 WorkoutHead.propTypes = {
   selectedWorkout: PropTypes.shape({
-    id:     PropTypes.string.isRequired,
-    phase:  PropTypes.string.isRequired,
-    week:   PropTypes.string.isRequired,
-    day:    PropTypes.string.isRequired,
-    title:  PropTypes.string.isRequired,
+    id: PropTypes.arrayOf(PropTypes.number).isRequired,
+    title: PropTypes.string.isRequired,
     exercises: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired,
-        sets: PropTypes.number.isRequired,
         reps: PropTypes.array.isRequired,
       }).isRequired
     )

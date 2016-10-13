@@ -1,9 +1,6 @@
 export default [
   {
-    id:     '111',
-    phase:  '1',
-    week:   '1',
-    day:    '1',
+    id:     [1,1], // [phase,day]
     title:  'Back & Rear Deltoids',
     exercises: [
       {
@@ -33,10 +30,7 @@ export default [
     ]
   },
   {
-    id:     '112',
-    phase:  '1',
-    week:   '1',
-    day:    '2',
+    id:     [1,2], // [phase,day]
     title:  'Chest & Front Deltoids',
     exercises: [
       {
@@ -70,10 +64,7 @@ export default [
     ]
   },
   {
-    id:     '113',
-    phase:  '1',
-    week:   '1',
-    day:    '1',
+    id:     [1,3], // [phase,day]
     title:  'Legs & Calves',
     exercises: [
       {
@@ -103,10 +94,7 @@ export default [
     ]
   },
   {
-    id:     '114',
-    phase:  '1',
-    week:   '1',
-    day:    '4',
+    id:     [1,4],
     title:  'Arms & Traps',
     exercises: [
       {
