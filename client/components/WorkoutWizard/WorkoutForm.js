@@ -3,11 +3,15 @@ import { Field, reduxForm } from 'redux-form'
 import validate from './validate'
 import renderField from './renderField'
 
-const WorkoutForm = (props) => {
-  const { handleSubmit } = props
+const WorkoutForm = ({ currentExercise, sets, setIndex, handleSubmit }) => {
   return (
     <form onSubmit={handleSubmit}>
-      <Field name="exercise" type="number" placeholder="enter..." component={renderField} label="exercise"/>
+      <Field 
+        name={currentExercise.name} 
+        type="number" 
+        placeholder={`enter ${currentExercise.track}`} 
+        component={renderField} 
+        label="exercise" />
       <div>
         <button type="submit" className="next">Submit</button>
       </div>
@@ -17,15 +21,10 @@ const WorkoutForm = (props) => {
 
 WorkoutForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
-  selectedWorkout: PropTypes.shape({
-    id: PropTypes.arrayOf(PropTypes.number).isRequired,
-    title: PropTypes.string.isRequired,
-    exercises: PropTypes.arrayOf(
-      PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        reps: PropTypes.array.isRequired,
-      }).isRequired
-    )
+  currentExercise: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    reps: PropTypes.array.isRequired, 
+    track: PropTypes.string.isRequired,
   }).isRequired,
 };
 

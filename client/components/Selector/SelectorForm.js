@@ -31,7 +31,7 @@ class SelectorForm extends Component {
         {page === 2 && <WeekSelector previousPage={this.previousPage} onSubmit={this.nextPage}/>}
         {page === 3 && <DaySelector previousPage={this.previousPage} onSubmit={fetchWorkout}/>}
       </div>
-    )
+    );
   }
 }
 

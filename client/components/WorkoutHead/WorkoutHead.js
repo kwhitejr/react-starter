@@ -1,8 +1,8 @@
 import React, { PropTypes }from 'react';
 
-const WorkoutHead = ({ selectedWorkout }) => {
+const WorkoutHead = ({ selectedWorkout, schedule }) => {
   return (<div>
-    <h1>Day {selectedWorkout.day}: {selectedWorkout.title}</h1>
+    <h1>Phase {schedule.phase}, Day {schedule.day}: {selectedWorkout.title}</h1>
     <h3>{selectedWorkout.exercises[0].name}</h3>
     <ul>
       {selectedWorkout.exercises[0].reps.map((rep, i) =>
@@ -20,9 +20,15 @@ WorkoutHead.propTypes = {
       PropTypes.shape({
         name: PropTypes.string.isRequired,
         reps: PropTypes.array.isRequired,
+        track: PropTypes.string.isRequired,
       }).isRequired
     )
   }).isRequired,
+  schedule: PropTypes.shape({
+    phase:    PropTypes.string.isRequired,
+    week:     PropTypes.string.isRequired,
+    day:      PropTypes.string.isRequired,
+  }).isRequired
 };
 
 export default WorkoutHead;

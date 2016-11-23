@@ -3,12 +3,12 @@ import Helmet from 'react-helmet';
 import React from 'react';
 
 import SelectorForm from '../../components/Selector';
-import { fetchWorkout } from '../../actions/workoutSelector_actions';
+import { fetchWorkout } from '../../actions/selector_actions';
 
-class SimpleSelector extends React.Component {
+class SelectorContainer extends React.Component {
   render() {
     return (<div>
-      <Helmet title='SimpleSelector' />
+      <Helmet title='SelectorContainer' />
       <h1>Select-bot</h1>
       <SelectorForm {...this.props} />
     </div>)
@@ -22,4 +22,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   () => ({}),
   mapDispatchToProps,
-)(SimpleSelector);
+)(SelectorContainer);
