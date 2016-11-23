@@ -12,6 +12,7 @@ import Home from '../containers/Home';
 import About from '../containers/About';
 import SelectorContainer from '../containers/SelectorContainer';
 import WorkoutContainer from '../containers/WorkoutContainer';
+import LoginContainer from '../containers/LoginContainer';
 import NotFound from '../containers/NotFound';
 
 export default (
@@ -21,6 +22,7 @@ export default (
       <Route component={About} path='about'/>
       <Route component={SelectorContainer} path='select'/>
       <Route component={WorkoutContainer} path='workout'/>
+      <Route component={LoginContainer} path='login'/>
       <Route component={NotFound} path='*' />
     </Route>
   </Router>
