@@ -47,7 +47,6 @@ class WorkoutWizard extends Component {
         { page === 1 && 
           <WorkoutForm 
             currentExercise={selectedWorkout.exercises[exerciseIndex]} // an object
-            sets={sets} // an array
             setIndex={setIndex} // a number
             onSubmit={this.nextPage} /> }
         { page > 1 && 

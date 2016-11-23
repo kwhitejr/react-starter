@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react'
-import { Field, reduxForm } from 'redux-form'
+import { Field, FieldArray, reduxForm } from 'redux-form'
 import validate from './validate'
 import renderField from './renderField'
 
-const WorkoutForm = ({ currentExercise, sets, setIndex, handleSubmit }) => {
+const WorkoutForm = ({ currentExercise, setIndex, handleSubmit }) => {
+
   return (
     <form onSubmit={handleSubmit}>
       <Field 
@@ -31,5 +32,6 @@ WorkoutForm.propTypes = {
 export default reduxForm({
   form: 'workout',              // <------ same form name
   destroyOnUnmount: false,     // <------ preserve form data
+  initialValues: {}
   validate
 })(WorkoutForm)
