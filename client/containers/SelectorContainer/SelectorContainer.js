@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import React from 'react';
 
-import SelectorForm from '../../components/Selector';
+import SelectorWizard from '../../components/SelectorWizard';
 import { fetchWorkout } from '../../actions/selector_actions';
 
 class SelectorContainer extends React.Component {
@@ -10,7 +10,7 @@ class SelectorContainer extends React.Component {
     return (<div>
       <Helmet title='SelectorContainer' />
       <h1>Select-bot</h1>
-      <SelectorForm {...this.props} />
+      <SelectorWizard {...this.props} />
     </div>)
   }
 }

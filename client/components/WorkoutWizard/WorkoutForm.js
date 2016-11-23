@@ -32,6 +32,5 @@ WorkoutForm.propTypes = {
 export default reduxForm({
   form: 'workout',              // <------ same form name
   destroyOnUnmount: false,     // <------ preserve form data
-  initialValues: {}
   validate
 })(WorkoutForm)

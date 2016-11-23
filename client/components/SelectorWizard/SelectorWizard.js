@@ -3,7 +3,7 @@ import PhaseSelector from './PhaseSelector'
 import WeekSelector from './WeekSelector'
 import DaySelector from './DaySelector'
 
-class SelectorForm extends Component {
+class SelectorWizard extends Component {
   constructor(props) {
     super(props)
     this.nextPage = this.nextPage.bind(this)
@@ -35,8 +35,8 @@ class SelectorForm extends Component {
   }
 }
 
-SelectorForm.propTypes = {
+SelectorWizard.propTypes = {
   fetchWorkout: PropTypes.func.isRequired
 }
 
-export default SelectorForm
+export default SelectorWizard
