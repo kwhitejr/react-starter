@@ -3,9 +3,11 @@ import { Field, FieldArray, reduxForm } from 'redux-form'
 import validate from './validate'
 import renderField from './renderField'
 
-const WorkoutForm = ({ currentExercise, setIndex, handleSubmit }) => {
+const WorkoutForm = ({ currentExercise, setIndex, handleSubmit, page }) => {
 
   return (
+    <div>
+    <div>Page: {page}</div>
     <form onSubmit={handleSubmit}>
       <Field 
         name={currentExercise.name} 
@@ -17,6 +19,7 @@ const WorkoutForm = ({ currentExercise, setIndex, handleSubmit }) => {
         <button type="submit" className="next">Submit</button>
       </div>
     </form>
+    </div>
   ) 
 }
 

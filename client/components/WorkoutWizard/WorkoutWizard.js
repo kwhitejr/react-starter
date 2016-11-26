@@ -14,7 +14,14 @@ class WorkoutWizard extends Component {
   }
 
   nextPage() {
-    this.setState({ page: this.state.page + 1 })
+    console.log("Next Page triggered")
+    const { selectedWorkout, gatherFormData } = this.props
+    const { exerciseIndex } = this.state
+    gatherFormData(selectedWorkout.exercises[exerciseIndex].name);
+    this.setState({ 
+      page: this.state.page + 1, 
+      setIndex: this.state.setIndex + 1, 
+    })
   }
 
   previousPage() {
@@ -48,17 +55,20 @@ class WorkoutWizard extends Component {
           <WorkoutForm 
             currentExercise={selectedWorkout.exercises[exerciseIndex]} // an object
             setIndex={setIndex} // a number
+            page={page}
             onSubmit={this.nextPage} /> }
         { page > 1 && 
           page < sets.length && 
           <WorkoutForm 
             currentExercise={selectedWorkout.exercises[exerciseIndex]} 
-            previousPage={this.previousPage} 
+            previousPage={this.previousPage}
+            page={page} 
             onSubmit={this.nextPage} /> }
         { page === sets.length &&
           <WorkoutForm 
             currentExercise={selectedWorkout.exercises[exerciseIndex]} 
-            previousPage={this.previousPage} 
+            previousPage={this.previousPage}
+            page={page} 
             onSubmit={storeExerciseData} /> }
       </div>
     );

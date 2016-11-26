@@ -5,6 +5,6 @@ import workoutReducer from './workout_reducer';
 
 export default combineReducers({
   form: formReducer,
-  selectorReducer,
-  workoutReducer,
+  selector: selectorReducer,
+  workout: workoutReducer,
 });

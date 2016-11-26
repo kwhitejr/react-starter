@@ -5,11 +5,10 @@ import React, { Component } from 'react';
 import WorkoutHead from '../../components/WorkoutHead';
 import WorkoutWizard from '../../components/WorkoutWizard';
 
-import { storeExerciseData } from '../../actions/workout_actions';
+import { gatherFormData, storeExerciseData } from '../../actions/workout_actions';
 
 class WorkoutContainer extends Component {
   render() {
-    console.log(this.props);
     return (<div>
       <Helmet title="Workout" />      
       <WorkoutHead {...this.props} />
@@ -19,11 +18,12 @@ class WorkoutContainer extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  selectedWorkout: state.selectorReducer.selectedWorkout,
-  schedule:        state.selectorReducer.schedule,
+  selectedWorkout: state.selector.selectedWorkout,
+  schedule:        state.selector.schedule,
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  gatherFormData: (exerciseName) => dispatch(gatherFormData(exerciseName)),
   storeExerciseData: () => dispatch(storeExerciseData())
 });
 
