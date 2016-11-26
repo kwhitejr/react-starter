@@ -30,7 +30,8 @@ class WorkoutWizard extends Component {
   nextExercise() {
     this.setState({ 
       exerciseIndex: this.state.exerciseIndex + 1, // number represents array index
-      page: 1
+      page: 1,
+      setIndex: 0,
     }) 
   }
 
@@ -68,7 +69,7 @@ class WorkoutWizard extends Component {
             currentExercise={selectedWorkout.exercises[exerciseIndex]} 
             previousPage={this.previousPage}
             page={page} 
-            onSubmit={storeExerciseData} /> }
+            onSubmit={nextExercise} /> }
       </div>
     );
   }

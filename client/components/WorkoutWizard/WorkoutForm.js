@@ -26,11 +26,14 @@ const WorkoutForm = ({ currentExercise, setIndex, handleSubmit, previousPage, pa
 
 WorkoutForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
+  previousPage: PropTypes.func,
   currentExercise: PropTypes.shape({
     name: PropTypes.string.isRequired,
     sets: PropTypes.array.isRequired, 
     track: PropTypes.string.isRequired,
   }).isRequired,
+  setIndex: PropTypes.number.isRequired,
+  page: PropTypes.number.isRequired
 };
 
 export default reduxForm({
