@@ -1,8 +1,6 @@
 import update from 'immutability-helper';
 
 function setExerciseData(state, exerciseName, value) {
-  console.log("Inside reducer setExerciseData", exerciseName, value)
-
   if (!state[exerciseName]) {
     return Object.assign({}, state, { [exerciseName]: [value]})
   } else {
