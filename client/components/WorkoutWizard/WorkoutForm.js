@@ -16,7 +16,7 @@ const WorkoutForm = ({ currentExercise, setIndex, handleSubmit, previousPage, pa
         component={renderField} 
         label="exercise" />
       <div>
-        <button type="button" className="previous" onClick={previousPage}>Previous</button>
+        {page !== 1 && <button type="button" className="previous" onClick={previousPage}>Previous</button>}
         <button type="submit" className="next">Submit</button>
       </div>
     </form>

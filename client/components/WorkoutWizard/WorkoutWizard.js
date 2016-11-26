@@ -1,11 +1,14 @@
 import React, { Component, PropTypes } from 'react'
 import WorkoutForm from './WorkoutForm'
+import WorkoutHead from '../../components/WorkoutHead';
 
 class WorkoutWizard extends Component {
   constructor(props) {
     super(props)
     this.nextPage = this.nextPage.bind(this)
     this.previousPage = this.previousPage.bind(this)
+    this.nextExercise = this.nextExercise.bind(this)
+    this.previousExercise = this.previousExercise.bind(this)
     this.state = {
       page: 1,
       exerciseIndex: 0,
@@ -28,6 +31,9 @@ class WorkoutWizard extends Component {
   }
 
   nextExercise() {
+    const { selectedWorkout, gatherFormData } = this.props
+    const { exerciseIndex } = this.state
+    gatherFormData(selectedWorkout.exercises[exerciseIndex].name);
     this.setState({ 
       exerciseIndex: this.state.exerciseIndex + 1, // number represents array index
       page: 1,
@@ -38,7 +44,7 @@ class WorkoutWizard extends Component {
   previousExercise() {
     this.setState({ 
       exerciseIndex: this.state.exerciseIndex - 1,
-      page: 1 
+      page: 1, 
     }) 
   }
 
@@ -51,6 +57,13 @@ class WorkoutWizard extends Component {
 
     return (
       <div>
+        <WorkoutHead 
+          selectedWorkout={selectedWorkout} // an object
+          exerciseIndex={exerciseIndex}
+          setIndex={setIndex} 
+          nextExercise={this.nextExercise}
+          previousExercise={this.previousExercise} 
+        />
         { page === 1 && 
           <WorkoutForm 
             currentExercise={selectedWorkout.exercises[exerciseIndex]} // an object
@@ -60,16 +73,18 @@ class WorkoutWizard extends Component {
         { page > 1 && 
           page < sets.length && 
           <WorkoutForm 
-            currentExercise={selectedWorkout.exercises[exerciseIndex]} 
+            currentExercise={selectedWorkout.exercises[exerciseIndex]}
+            setIndex={setIndex} 
             previousPage={this.previousPage}
             page={page} 
             onSubmit={this.nextPage} /> }
         { page === sets.length &&
           <WorkoutForm 
-            currentExercise={selectedWorkout.exercises[exerciseIndex]} 
+            currentExercise={selectedWorkout.exercises[exerciseIndex]}
+            setIndex={setIndex} 
             previousPage={this.previousPage}
             page={page} 
-            onSubmit={nextExercise} /> }
+            onSubmit={this.nextExercise} /> }
       </div>
     );
   }

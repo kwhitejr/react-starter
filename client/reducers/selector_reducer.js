@@ -1,5 +1,4 @@
 function receiveWorkout(state, selectedWorkout) {
-  console.log('received workout!')
   const newObj = {
     selectedWorkout: selectedWorkout
   };
