@@ -23,8 +23,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  gatherFormData: (exerciseName) => dispatch(gatherFormData(exerciseName)),
-  storeExerciseData: () => dispatch(storeExerciseData())
+  gatherFormData:     (exerciseName) => dispatch(gatherFormData(exerciseName)),
+  storeExerciseData:  () => dispatch(storeExerciseData())
 });
 
 export default connect(

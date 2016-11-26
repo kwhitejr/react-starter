@@ -3,7 +3,7 @@ import { Field, FieldArray, reduxForm } from 'redux-form'
 import validate from './validate'
 import renderField from './renderField'
 
-const WorkoutForm = ({ currentExercise, setIndex, handleSubmit, page }) => {
+const WorkoutForm = ({ currentExercise, setIndex, handleSubmit, previousPage, page }) => {
 
   return (
     <div>
@@ -16,6 +16,7 @@ const WorkoutForm = ({ currentExercise, setIndex, handleSubmit, page }) => {
         component={renderField} 
         label="exercise" />
       <div>
+        <button type="button" className="previous" onClick={previousPage}>Previous</button>
         <button type="submit" className="next">Submit</button>
       </div>
     </form>
@@ -27,7 +28,7 @@ WorkoutForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   currentExercise: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    reps: PropTypes.array.isRequired, 
+    sets: PropTypes.array.isRequired, 
     track: PropTypes.string.isRequired,
   }).isRequired,
 };

@@ -5,7 +5,7 @@ const WorkoutHead = ({ selectedWorkout, schedule }) => {
     <h1>Phase {schedule.phase}, Day {schedule.day}: {selectedWorkout.title}</h1>
     <h3>{selectedWorkout.exercises[0].name}</h3>
     <ul>
-      {selectedWorkout.exercises[0].reps.map((rep, i) =>
+      {selectedWorkout.exercises[0].sets.map((rep, i) =>
         (<li key={i}>{rep}</li>)
       )}
     </ul>
@@ -19,7 +19,7 @@ WorkoutHead.propTypes = {
     exercises: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired,
-        reps: PropTypes.array.isRequired,
+        sets: PropTypes.array.isRequired,
         track: PropTypes.string.isRequired,
       }).isRequired
     )

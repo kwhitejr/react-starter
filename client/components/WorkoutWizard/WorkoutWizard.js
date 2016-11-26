@@ -14,7 +14,6 @@ class WorkoutWizard extends Component {
   }
 
   nextPage() {
-    console.log("Next Page triggered")
     const { selectedWorkout, gatherFormData } = this.props
     const { exerciseIndex } = this.state
     gatherFormData(selectedWorkout.exercises[exerciseIndex].name);
@@ -47,7 +46,7 @@ class WorkoutWizard extends Component {
     const { page, exerciseIndex, setIndex } = this.state
     
     // An array of numbers; vals = reps, length = # of sets
-    const sets = selectedWorkout.exercises[exerciseIndex].reps 
+    const sets = selectedWorkout.exercises[exerciseIndex].sets 
 
     return (
       <div>
@@ -82,7 +81,7 @@ WorkoutWizard.propTypes = {
     exercises: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired,
-        reps: PropTypes.array.isRequired,
+        sets: PropTypes.array.isRequired,
         track: PropTypes.string.isRequired,
       }).isRequired
     )
