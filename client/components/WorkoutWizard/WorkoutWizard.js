@@ -17,9 +17,11 @@ class WorkoutWizard extends Component {
   }
 
   nextPage() {
-    const { selectedWorkout, gatherFormData } = this.props
+    const { selectedWorkout, gatherFormData, reset } = this.props
     const { exerciseIndex } = this.state
     gatherFormData(selectedWorkout.exercises[exerciseIndex].name);
+    // console.log("reset", reset);
+    reset();
     this.setState({ 
       page: this.state.page + 1, 
       setIndex: this.state.setIndex + 1, 
@@ -31,9 +33,12 @@ class WorkoutWizard extends Component {
   }
 
   nextExercise() {
-    const { selectedWorkout, gatherFormData } = this.props
+    const { selectedWorkout, gatherFormData, reset } = this.props
     const { exerciseIndex } = this.state
     gatherFormData(selectedWorkout.exercises[exerciseIndex].name);
+    // this.props.dispatch(reset('workout'));
+    console.log("reset", reset);
+    reset();
     this.setState({ 
       exerciseIndex: this.state.exerciseIndex + 1, // number represents array index
       page: 1,

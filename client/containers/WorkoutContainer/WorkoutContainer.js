@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import React, { Component } from 'react';
+import { reset } from 'redux-form'
 
 import WorkoutWizard from '../../components/WorkoutWizard';
 
@@ -21,7 +22,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   gatherFormData:     (exerciseName) => dispatch(gatherFormData(exerciseName)),
-  storeExerciseData:  () => dispatch(storeExerciseData())
+  storeExerciseData:  () => dispatch(storeExerciseData()),
+  reset:              () => dispatch(reset('workout')),
 });
 
 export default connect(
