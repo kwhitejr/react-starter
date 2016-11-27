@@ -1,4 +1,4 @@
-import Workout from './models/workout';
+import Workout from './models/workout_schema';
 
 export default function () {
   Workout.count().exec((err, count) => {

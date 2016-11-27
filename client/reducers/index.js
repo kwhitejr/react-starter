@@ -8,5 +8,8 @@ export default combineReducers({
   form: formReducer,
   selector: selectorReducer,
   workout: workoutReducer,
+<<<<<<< HEAD
   auth: authReducer,
+=======
+>>>>>>> development
 });

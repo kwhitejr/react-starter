@@ -14,10 +14,10 @@ function setSchedule(state, schedule) {
 
 export default function(state = {}, action) {
   switch (action.type) {
-  case 'RECEIVE_WORKOUT':
-    return receiveWorkout(state, action.selectedWorkout);
-  case 'SET_SCHEDULE':
-    return setSchedule(state, action.schedule);
+    case 'RECEIVE_WORKOUT':
+      return receiveWorkout(state, action.selectedWorkout);
+    case 'SET_SCHEDULE':
+      return setSchedule(state, action.schedule);
   }
   return state;
 }
